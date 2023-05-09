@@ -1,0 +1,83 @@
+<section id="experiencia" class="experiencia">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-3">
+        <h2 class="text-center mb-4">Experiencia Laboral</h2>
+      </div>
+      <div class="col-1">
+        <button data-bs-toggle="modal" data-bs-target="#editarModal">+</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Empresa</th>
+              <th>Puesto</th>
+              <th>Periodo</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let experiencia of experienciaArray" (click)="operForEdit(experiencia)">
+              <td>{{ experiencia.id }}</td>
+              <td>
+                {{ experiencia.empresa }}
+              </td>
+              <td>{{ experiencia.puesto }}</td>
+              <td>{{ experiencia.fecha }}</td>
+              <td>
+                <button data-bs-toggle="modal" data-bs-target="#editarModal">
+                  Acciones
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="editarModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Experiencia</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label text-light">Empresa:</label>
+          <input type="text" [(ngModel)]="selectedExperiencia.empresa" class="form-control" id="empresa"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label text-light">Puesto:</label>
+          <input type="text" [(ngModel)]="selectedExperiencia.puesto" class="form-control" id="puesto"
+            aria-describedby="emailHelp" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label text-light">Fecha:</label>
+          <input type="text" [(ngModel)]="selectedExperiencia.fecha" class="form-control" id="fecha"
+            aria-describedby="emailHelp" />
+        </div>
+      </div>
+
+      <div class="modal-footer">        
+        <button (click)="addOrEdit()" class="btn btn-primary" data-bs-dismiss="modal">
+          Guardar
+        </button>
+        <button (click)="delete()" *ngIf="selectedExperiencia.id !== 0" class="btn btn-danger" data-bs-dismiss="modal">
+          Borrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

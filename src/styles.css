@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+i.fa-solid.fa-user.fa-2xl:hover,
+i.fa-brands.fa-facebook.fa-2xl:hover,
+i.fa-brands.fa-linkedin.fa-2xl:hover,
+i.fa-brands.fa-instagram.fa-2xl:hover {
+  color: white;
+}
+
+.list-group {
+  --bs-list-group-bg: transparent;
+  --bs-list-group-border-color: transparent;
+}
+
+header{
+  background-color: #2a2a2a;
+}
+
+body {  
+  background-color: white;
+  min-height: 100vh;
+  position: relative;
+}
+
+section.about { 
+  color: white;
+  padding: 10rem;
+  background-color: black;
+}
+
+section.experiencia, section.educacion, section.habilidades, section.proyectos{
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.modal-content{
+  --bs-modal-bg: #2a2a2a;
+}
+.modal-dialog{
+  color: white;
+}
+
