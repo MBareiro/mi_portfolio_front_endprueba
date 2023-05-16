@@ -1,36 +1,35 @@
 import { Component } from '@angular/core';
 import { Experiencia } from 'src/app/models/experiencia';
+import { SExperienciaService } from 'src/app/servicios/s-experiencia.service';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent {
-  
-  experienciaArray = [
-    {id: 1, empresa : "arcor", puesto: "gerente", fecha: "2002"}    
-  ];  
+  expe: Experiencia[] = [];
 
-  selectedExperiencia: Experiencia = new Experiencia();
+  constructor(private sExperiencia: SExperienciaService) { }
 
-  addOrEdit(){
-    if(this.selectedExperiencia.id === 0){
-      this.selectedExperiencia.id = this.experienciaArray.length + 1;
-      this.experienciaArray.push(this.selectedExperiencia);   
+  isLogged = false;
+
+  ngOnInit(): void {
+    this.cargarExperiencia();
+  }
+
+  cargarExperiencia(): void {
+    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
+  }
+
+  delete(id?: number){
+    if(id != undefined){
+      this.sExperiencia.delete(id).subscribe(
+        data => {
+          this.cargarExperiencia();
+        }, err => {
+          alert("No se pudo borrar la experiencia");
+        }
+      )
     }
-    this.selectedExperiencia = new Experiencia();   
-  }  
-
-  clearModal(){
-    this.selectedExperiencia = new Experiencia();  
-  }
-
-  operForEdit(experiencia: Experiencia){
-    this.selectedExperiencia = experiencia;
-  }
-
-  delete(){
-    this.experienciaArray = this.experienciaArray.filter(x => x != this.selectedExperiencia);
-    this.selectedExperiencia = new Experiencia();
   }
 }

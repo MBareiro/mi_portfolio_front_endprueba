@@ -1,89 +1,31 @@
-<section id="educacion" class="educacion">
-  <div class="container mt-5">
-    <div class="row justify-content-between">
-      <div class="col-3">
-        <h2 class="text-center mb-4">Educacion</h2>
-      </div>
-      <div class="col-1">
-        <button data-bs-toggle="modal" data-bs-target="#editarModalEducacion">+</button>
-      </div>
-    </div>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Empresa</th>
-          <th>Puesto</th>
-          <th>Periodo</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          *ngFor="let educacion of educacionArray"
-          (click)="operForEdit(educacion)"
-        >
-          <td>{{ educacion.id }}</td>
-          <td>
-            {{ educacion.institucion }}
-          </td>
-          <td>{{ educacion.carrera }}</td>
-          <td>{{ educacion.AIngreso }}</td>
-          <td>{{ educacion.ASalida }}</td>
-          <td>
-            <button data-bs-toggle="modal" data-bs-target="#editarModalEducacion">
-              Acciones
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
+<div class="row">
+  <h1>Educacion</h1>
+  <div class="col-lg-2">
+      <button type="button" class="btn btn-dark" routerLink="/nuevaedu" >
+          Agregar Educacion
+      </button>
   </div>
-</section>
 
-<!-- Modal -->
-<div class="modal fade" id="editarModalEducacion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Educacion</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-light">institucion:</label>
-          <input type="text" [(ngModel)]="selectedEducacion.institucion" class="form-control" id="empresa"
-            aria-describedby="emailHelp" />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-light">Carrera:</label>
-          <input type="text" [(ngModel)]="selectedEducacion.carrera" class="form-control" id="puesto"
-            aria-describedby="emailHelp" />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-light">Año de ingreso:</label>
-          <input type="text" [(ngModel)]="selectedEducacion.AIngreso" class="form-control" id="fecha"
-            aria-describedby="emailHelp" />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label text-light">Año de egreso:</label>
-          <input type="text" [(ngModel)]="selectedEducacion.ASalida" class="form-control" id="fecha"
-            aria-describedby="emailHelp" />
-        </div>
-      </div>
-
-      <div class="modal-footer">        
-        <button (click)="addOrEdit()" class="btn btn-primary" data-bs-dismiss="modal">
-          Guardar
-        </button>
-        <button (click)="delete()" *ngIf="selectedEducacion.id !== 0" class="btn btn-danger" data-bs-dismiss="modal">
-          Borrar
-        </button>
-      </div>
-    </div>
+  <div class="col lg 1"></div>
+  <div class="col-lg-11">
+      <table class="table">
+          <tbody>
+              <tr *ngFor="let Educacion of educacion">
+                  <td>
+                      <h2>{{Educacion.nombreE}}</h2>
+                  </td>
+                  <td>{{Educacion.descripcionE}}</td>
+                  <td >
+                      <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                          <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                  </td>
+                  <td >
+                      <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                          <i class="bi bi-trash-fill"></i> BORRAR</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
   </div>
+
 </div>

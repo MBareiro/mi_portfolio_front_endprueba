@@ -1,0 +1,16 @@
+/* etiqueta nombre*/
+#nombre {
+  font-weight: bold;
+}
+
+.row {    
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(130, 133, 136);
+}
+img{
+    padding: 25px;
+}
+h5{
+    padding-bottom: 25px;
+}

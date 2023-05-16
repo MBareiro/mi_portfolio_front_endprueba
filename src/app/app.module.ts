@@ -8,12 +8,25 @@ import { EncabezadoComponent } from './componentes/encabezado/encabezado.compone
 import { SobreMiComponent } from './componentes/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
-import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { HysComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { ModalLoginComponent } from './componentes/modal-login/modal-login.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { SocialComponent } from './componentes/social/social.component';
 import { LogoApComponent } from './componentes/logo-ap/logo-ap.component';
+import { BannerComponent } from './componentes/banner/banner.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './componentes/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NewExperienciaComponent } from './componentes/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './componentes/experiencia/edit-experiencia.component';
+import { NeweducacionComponent } from './componentes/educacion/neweducacion.component';
+import { EditeducacionComponent } from './componentes/educacion/editeducacion.component';
+import { NewSkillComponent } from './componentes/habilidades/new-skill.component';
+import { EditSkillComponent } from './componentes/habilidades/edit-skill.component';
+import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,17 +35,28 @@ import { LogoApComponent } from './componentes/logo-ap/logo-ap.component';
     SobreMiComponent,
     ExperienciaComponent,
     EducacionComponent,
-    HabilidadesComponent,
+    HysComponent,
     ProyectosComponent,
     ModalLoginComponent,
     FooterComponent,
     SocialComponent,
-    LogoApComponent
+    LogoApComponent,
+    BannerComponent,
+    HomeComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent,
+    NeweducacionComponent,
+    EditeducacionComponent,
+    NewSkillComponent,
+    EditSkillComponent,
+    EditSobreMiComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
