@@ -25,8 +25,8 @@ import { EditeducacionComponent } from './componentes/educacion/editeducacion.co
 import { NewSkillComponent } from './componentes/habilidades/new-skill.component';
 import { EditSkillComponent } from './componentes/habilidades/edit-skill.component';
 import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.component';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from '../environments/environment';
+import { NewProjectComponent } from './componentes/proyectos/new-project.component';
+import { EditProjectComponent } from './componentes/proyectos/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +50,9 @@ import { environment } from '../environments/environment';
     NewSkillComponent,
     EditSkillComponent,
     EditSobreMiComponent,
+    EditProjectComponent,
+    NewProjectComponent
+    
   ],
   imports: [
     BrowserModule,
