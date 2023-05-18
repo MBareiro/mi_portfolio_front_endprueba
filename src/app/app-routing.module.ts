@@ -26,6 +26,8 @@ const routes: Routes = [
 
   { path: 'newproject', component: NewProjectComponent},
   { path: 'editproject/:id', component: EditProjectComponent},
+
+  { path: 'editsobremi/:id', component: EditSobreMiComponent},
 ];
 
 @NgModule({
