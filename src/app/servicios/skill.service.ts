@@ -7,7 +7,8 @@ import { Skill } from '../models/skill';
   providedIn: 'root'
 })
 export class SkillService {
-  URL = 'http://localhost:8080/skill/';
+  //URL = 'http://localhost:8080/skill/';
+  URL = 'https://mbdevfrontend.web.app/skill';
   
   constructor(private httpClient: HttpClient) { }
 

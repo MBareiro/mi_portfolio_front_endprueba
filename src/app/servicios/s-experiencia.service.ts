@@ -7,7 +7,9 @@ import { Experiencia } from '../models/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  expURL = 'http://localhost:8080/explab/';
+  //expURL = 'http://localhost:8080/explab/';
+  expURL = 'https://mbdevfrontend.web.app/explab';
+
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]> {

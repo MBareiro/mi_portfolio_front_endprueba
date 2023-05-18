@@ -8,8 +8,9 @@ import { Educacion } from '../models/educacion';
 })
 export class EducacionService {
 
-  URL = 'http://localhost:8080/educacion/';
-
+  //URL = 'http://localhost:8080/educacion/';
+  URL = 'https://mbdevfrontend.web.app/educacion';
+  
   constructor(private httpClient : HttpClient) { }
 
   public lista(): Observable<Educacion[]>{
