@@ -8,7 +8,9 @@ import { PersonaService } from 'src/app/servicios/persona.service';
   styleUrls: ['./sobre-mi.component.css']
 })
 export class SobreMiComponent implements OnInit {
+
   persona: Persona = null;
+  isLogged = false;
 
   constructor(public personaService: PersonaService) { }
 
@@ -16,7 +18,7 @@ export class SobreMiComponent implements OnInit {
     this.cargarPersona();
   }
 
-  cargarPersona(){
+  cargarPersona(): void{
     this.personaService.detail(1).subscribe(data => 
       {this.persona = data}
       )
