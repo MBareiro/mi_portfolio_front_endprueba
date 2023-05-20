@@ -15,11 +15,11 @@ export class SobreMiComponent implements OnInit {
   constructor(public personaService: PersonaService) { }
 
   ngOnInit(): void {
-    this.cargarPersona();
+    //this.cargarPersona();
   }
 
   cargarPersona(): void{
-    this.personaService.detail(1).subscribe(data => 
+    this.personaService.getPersona().subscribe(data => 
       {this.persona = data}
       )
   }

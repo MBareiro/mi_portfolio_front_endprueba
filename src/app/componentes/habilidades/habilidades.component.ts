@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/models/skill';
 import { SkillService } from 'src/app/servicios/skill.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-habilidades',
@@ -10,11 +11,16 @@ import { SkillService } from 'src/app/servicios/skill.service';
 export class HysComponent implements OnInit {
   skill: Skill[] = [];
 
-  constructor(private skillS: SkillService) { }
+  constructor(private skillS: SkillService, private tokenService: TokenService) { }
   isLogged = false;
   
   ngOnInit(): void {
-    this.cargarSkills();    
+    this.cargarSkills();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   cargarSkills(): void{

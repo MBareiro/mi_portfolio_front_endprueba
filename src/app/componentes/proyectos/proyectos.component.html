@@ -5,7 +5,7 @@
         <h2>Proyectos</h2>
       </div>
       <div class="col-md-2">
-        <button type="button" class="btn btn-success" routerLink="/newproject">
+        <button type="button" class="btn btn-success" routerLink="/newproject" *ngIf="isLogged">
           Agregar
         </button>
       </div>
@@ -18,10 +18,10 @@
             <h5 class="card-title">{{ project.titulo }}</h5>
             <p class="card-text">{{ project.descripcion }}</p>
             <div class="buttons-container">
-              <button class="btn btn-light" [routerLink]="'/editproject/' + project.id">
+              <button class="btn btn-light" [routerLink]="'/editproject/' + project.id" *ngIf="isLogged">
                 <i class="bi bi-pencil-fill"></i>
               </button>
-              <button class="btn btn-danger" (click)="delete(project.id)">
+              <button class="btn btn-danger" (click)="delete(project.id)" *ngIf="isLogged">
                 <i class="bi bi-trash-fill"></i>
               </button>
             </div>

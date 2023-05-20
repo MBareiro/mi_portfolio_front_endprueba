@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/servicios/project.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -10,12 +11,17 @@ import { ProjectService } from 'src/app/servicios/project.service';
 export class ProyectosComponent implements OnInit {
 
   projects: Project[] = [];
+  
+  constructor(private projectService: ProjectService, private tokenService: TokenService) { }
   isLogged = false;
-
-  constructor(private projectService: ProjectService) { }
   
   ngOnInit(): void {
-    this.cargarProjects();    
+    this.cargarProjects();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   cargarProjects(): void {

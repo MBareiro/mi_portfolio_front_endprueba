@@ -10,9 +10,12 @@ import { HomeComponent } from './componentes/home/home.component';
 import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.component';
 import { NewProjectComponent } from './componentes/proyectos/new-project.component';
 import { EditProjectComponent } from './componentes/proyectos/edit-project.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+
   { path: 'nuevaexp', component: NewExperienciaComponent},
   { path: 'editexp/:id', component: EditExperienciaComponent},
   

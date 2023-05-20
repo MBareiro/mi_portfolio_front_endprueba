@@ -27,6 +27,8 @@ import { EditSkillComponent } from './componentes/habilidades/edit-skill.compone
 import { EditSobreMiComponent } from './componentes/sobre-mi/edit-sobre-mi.component';
 import { NewProjectComponent } from './componentes/proyectos/new-project.component';
 import { EditProjectComponent } from './componentes/proyectos/edit-project.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { interceptorProvider } from './servicios/interceptor-service';
 
 @NgModule({
   declarations: [
@@ -51,8 +53,8 @@ import { EditProjectComponent } from './componentes/proyectos/edit-project.compo
     EditSkillComponent,
     EditSobreMiComponent,
     EditProjectComponent,
-    NewProjectComponent
-    
+    NewProjectComponent,
+    LoginComponent    
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,9 @@ import { EditProjectComponent } from './componentes/proyectos/edit-project.compo
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
