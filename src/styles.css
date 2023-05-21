@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-
 body {  
   background-color: white;
   min-height: 100vh;
@@ -17,9 +15,6 @@ section.sobre-mi {
 section.experiencia, section.educacion, section.habilidades, section.proyectos{
   background-color: white;
   padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
 }
 
 .modal-content{

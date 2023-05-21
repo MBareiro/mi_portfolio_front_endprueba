@@ -5,3 +5,7 @@
 h1, h3{
     display: inline;
 }
+
+section{
+    background-color:  #9b9c9c;
+}
