@@ -11,7 +11,7 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class EditSobreMiComponent {
   persona: Persona = null;
-/*
+
   constructor(private activatedRouter: ActivatedRoute, 
     private personaService: PersonaService, 
     private router: Router,
@@ -46,5 +46,5 @@ export class EditSobreMiComponent {
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;
     this.imageService.uploadImage($event, name);
-  }*/
+  }
 }

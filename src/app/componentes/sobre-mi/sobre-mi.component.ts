@@ -15,7 +15,7 @@ export class SobreMiComponent implements OnInit {
   constructor(public personaService: PersonaService) { }
 
   ngOnInit(): void {
-    //this.cargarPersona();
+    this.cargarPersona();
   }
 
   cargarPersona(): void{
