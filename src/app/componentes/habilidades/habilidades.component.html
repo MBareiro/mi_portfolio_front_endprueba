@@ -23,12 +23,12 @@
         <div>
           <td>
             <button class="btn btn-light" routerLink="/editskill/{{ skill.id }}" *ngIf="isLogged">
-              <i class="bi bi-pencil-fill"></i>
+              <i class="fas fa-edit"></i>
             </button>
           </td>
           <td>
             <button class="btn btn-danger" (click)="delete(skill.id)" *ngIf="isLogged">
-              <i class="bi bi-trash-fill"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </td>
         </div>

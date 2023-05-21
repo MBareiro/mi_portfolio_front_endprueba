@@ -19,10 +19,10 @@
             <p class="card-text">{{ project.descripcion }}</p>
             <div class="buttons-container">
               <button class="btn btn-light" [routerLink]="'/editproject/' + project.id" *ngIf="isLogged">
-                <i class="bi bi-pencil-fill"></i>
+                <i class="fas fa-edit"></i>
               </button>
               <button class="btn btn-danger" (click)="delete(project.id)" *ngIf="isLogged">
-                <i class="bi bi-trash-fill"></i>
+                <i class="fas fa-trash-alt"></i>
               </button>
             </div>
           </div>
