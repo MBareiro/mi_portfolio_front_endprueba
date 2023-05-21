@@ -20,7 +20,7 @@ export class PersonaService {
   
   //Observable hace peticiones asincronas, maneja las peticiones y respuestas
   public getPersona(): Observable<Persona> {
-    return this.http.get<Persona>(this.URL+'traer/perfil');
+    return this.httpClient.get<Persona>(this.URL+'traer/perfil');
   }
 
   public lista(): Observable<Persona[]>{

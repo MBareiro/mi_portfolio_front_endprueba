@@ -1,19 +1,29 @@
-<div class="container">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="titulo">Nombre de la institucion</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">Descripcion de sus estudios</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
-                </div>
-                <button class="btn btn-primary">
-                    Agregar educacion
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto</title>
+</head>
+
+<body>
+  <div class="login-dark" >
+    <form (ngSubmit)="onCreate()" novalidate #f="ngForm" novalidate>
+      <h2 class="sr-only">Proyecto</h2>
+      <div class="illustration"><i class="fas fa-folder-open"></i></div>
+
+      <div class="form-group"> <input type="text" id="nombre" name="nombre" class="form-control
+        form-control-lg" [(ngModel)]="titulo" required placeholder="Nombre" /></div>
+
+      <div class="form-group"><input type="porcentaje" id="porcentaje" name="porcentaje" class="form-control form-control-lg"
+        [(ngModel)]="descripcion" required placeholder="Porcentaje" /></div>
+
+      <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+    </form>
+  </div>
+</body>
+
+</html>

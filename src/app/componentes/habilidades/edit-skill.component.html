@@ -1,19 +1,28 @@
-<div class="container" *ngIf="skill">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre de la Skill</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="skill.nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="porcentaje">Ingrese el porcentaje</label>
-                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="skill.porcentaje" required>
-                </div>
-                <button class="btn btn-primary">
-                    Actualizar
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untitled</title>
+</head>
+
+<body>
+  <div class="login-dark" *ngIf="skill">
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" novalidate>
+      <h2 class="sr-only">Login</h2>
+      <div class="illustration"><i class="fas fa-code"></i></div>
+
+      <div class="form-group"> <input type="text" id="nombre" name="nombre" class="form-control
+        form-control-lg" [(ngModel)]="skill.nombre" required placeholder="Nombre" /></div>
+
+      <div class="form-group"><input type="porcentaje" id="porcentaje" name="porcentaje" class="form-control form-control-lg"
+        [(ngModel)]="skill.porcentaje" required placeholder="Porcentaje" /></div>
+
+      <button class="btn btn-primary btn-block" type="submit">Agregar educacion</button>
+    </form>
+  </div>
+</body>
+
+</html>
