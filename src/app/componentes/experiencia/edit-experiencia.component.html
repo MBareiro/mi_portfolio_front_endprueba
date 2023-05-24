@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -11,15 +9,21 @@
 
 <body>
   <div class="login-dark" *ngIf="expLab">
-    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" novalidate>
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
       <h2 class="sr-only">Experiencia</h2>
       <div class="illustration"><i class="fas fa-briefcase"></i></div>
 
-      <div class="form-group"> <input type="email" id="nombreE" name="nombreE" class="form-control
-        form-control-lg" [(ngModel)]="expLab.nombreE" required placeholder="Titulo" /></div>
+      <div class="form-group">
+        <input type="text" id="nombreE" name="nombreE" class="form-control form-control-lg" [(ngModel)]="expLab.nombreE"
+          required placeholder="Titulo" />
+        <div *ngIf="formSubmitted && !expLab?.nombreE" class="text-danger">El título es requerido.</div>
+      </div>
 
-      <div class="form-group"><input type="descripcionE" id="descripcionE" name="descripcionE" class="form-control form-control-lg"
-        [(ngModel)]="expLab.descripcionE" required placeholder="Descripcion" /></div>
+      <div class="form-group">
+        <input type="text" id="descripcionE" name="descripcionE" class="form-control form-control-lg"
+          [(ngModel)]="expLab.descripcionE" required placeholder="Descripcion" />
+        <div *ngIf="formSubmitted && !expLab?.descripcionE" class="text-danger">La descripción es requerida.</div>
+      </div>
 
       <button class="btn btn-primary btn-block" type="submit">Guardar</button>
     </form>

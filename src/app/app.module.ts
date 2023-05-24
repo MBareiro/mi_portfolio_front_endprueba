@@ -29,6 +29,7 @@ import { NewProjectComponent } from './componentes/proyectos/new-project.compone
 import { EditProjectComponent } from './componentes/proyectos/edit-project.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { interceptorProvider } from './servicios/interceptor-service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { interceptorProvider } from './servicios/interceptor-service';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     interceptorProvider

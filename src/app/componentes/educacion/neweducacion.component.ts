@@ -1,33 +1,70 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/models/educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-neweducacion',
   templateUrl: './neweducacion.component.html',
   styleUrls: ['./neweducacion.component.css']
 })
-export class NeweducacionComponent implements OnInit {
+export class NeweducacionComponent {
   nombreE: string;
   descripcionE: string;
+  formSubmitted = false;
 
   constructor(private educacionS: EducacionService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  onCreate(): void {
+    this.formSubmitted = true;
+    
+    if (!this.isFormValid()) {
+      Swal.fire({
+        title: 'Advertencia!',
+        text: 'Por favor, completa todos los campos requeridos.',
+        icon: 'warning',
+        background: '#1e2833',
+        color: 'white',
+        iconColor: 'white',
+        confirmButtonColor: '#1e2833',
+        confirmButtonText: 'Aceptar',
+      });
+      return;
+    }
 
-  onCreate(): void{
     const educacion = new Educacion(this.nombreE, this.descripcionE);
     this.educacionS.save(educacion).subscribe(
-      data =>{
-        alert("Educacion añadida correctamente");
+      () => {
+        Swal.fire({
+          title: 'Éxito!',
+          text: 'Educación añadida correctamente.',
+          icon: 'success',
+          background: '#1e2833',
+          color: 'white',
+          iconColor: 'white',
+          confirmButtonColor: '#1e2833',
+          confirmButtonText: 'Aceptar',
+        });
         this.router.navigate(['']);
-      }, err =>{
-        alert("falló");
+      },
+      () => {
+        Swal.fire({
+          title: 'Ups!',
+          text: 'Algo no salió bien :(',
+          icon: 'error',
+          background: '#1e2833',
+          color: 'white',
+          iconColor: 'white',
+          confirmButtonColor: '#1e2833',
+          confirmButtonText: 'Aceptar',
+        });
         this.router.navigate(['']);
       }
-    )
+    );
   }
 
+  isFormValid(): boolean {
+    return !!this.nombreE && !!this.descripcionE;
+  }
 }

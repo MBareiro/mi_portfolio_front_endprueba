@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/models/login-usuario';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',
@@ -40,12 +42,23 @@ export class LoginComponent implements OnInit {
         this.roles = data.authorities;
         this.router.navigate([''])
       }, err =>{
+        this.showErrorMessage('Usuario/Contraseña incorrecto');
         this.isLogged = false;
-        this.isLogginFail = true;
-        this.errMsj = err.error.mensaje;
-        console.log(this.errMsj);
-        
+        this.isLogginFail = true;     
       })
   }
+
+  showErrorMessage(message: string): void {
+    Swal.fire({
+      title: '',
+      text: message,
+      icon: 'warning',
+      background: 'gray',
+      color: 'white'
+    });
+  }
+    
+  
+    
 
 }

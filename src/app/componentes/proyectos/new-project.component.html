@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -10,16 +8,18 @@
 </head>
 
 <body>
-  <div class="login-dark" >
+  <div class="login-dark">
     <form (ngSubmit)="onCreate()" novalidate #f="ngForm" novalidate>
       <h2 class="sr-only">Proyecto</h2>
       <div class="illustration"><i class="fas fa-folder-open"></i></div>
 
       <div class="form-group"> <input type="text" id="nombre" name="nombre" class="form-control
         form-control-lg" [(ngModel)]="titulo" required placeholder="Nombre" /></div>
+      <div *ngIf="formSubmitted && !titulo" class="text-danger">El título es requerido.</div>
 
-      <div class="form-group"><input type="porcentaje" id="porcentaje" name="porcentaje" class="form-control form-control-lg"
-        [(ngModel)]="descripcion" required placeholder="Porcentaje" /></div>
+      <div class="form-group"><input type="text" id="descripcion" name="descripcion"
+          class="form-control form-control-lg" [(ngModel)]="descripcion" required placeholder="Descripcion" /></div>
+      <div *ngIf="formSubmitted && !descripcion" class="text-danger">La descripcion es requerida.</div>
 
       <button class="btn btn-primary btn-block" type="submit">Guardar</button>
     </form>

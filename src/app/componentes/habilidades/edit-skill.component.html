@@ -16,10 +16,10 @@
 
       <div class="form-group"> <input type="text" id="nombre" name="nombre" class="form-control
         form-control-lg" [(ngModel)]="skill.nombre" required placeholder="Nombre" /></div>
-
+        <div *ngIf="formSubmitted && !skill?.nombre" class="text-danger">El nombre es requerido.</div>
       <div class="form-group"><input type="porcentaje" id="porcentaje" name="porcentaje" class="form-control form-control-lg"
         [(ngModel)]="skill.porcentaje" required placeholder="Porcentaje" /></div>
-
+        <div *ngIf="formSubmitted && !skill?.porcentaje" class="text-danger">El porcentaje es requerido.</div>
       <button class="btn btn-primary btn-block" type="submit">Agregar educacion</button>
     </form>
   </div>
