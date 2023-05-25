@@ -5,20 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class ImageService {
   url: string = "";
-  /*
+  
 
   constructor(private storage: Storage) { }
 
-  public uploadImage($event: any, name: string) {
+  public uploadImage($event: any, name: string) {/*
     const file = $event.target.files[0];
     const imgRef = ref(this.storage, 'imagen/'+ name);
     uploadBytes(imgRef, file)
     .then(response => {this.getImages()})
     .catch(error => console.log(error)
-    )
+    )*/
   }
 
-  getImages() {
+  getImages() {/*
     const imagesRef = ref(this.storage, 'imagen')
     list(imagesRef)
     .then(async response => {
@@ -27,6 +27,6 @@ export class ImageService {
         console.log("la url es " + this.url);
       }
     })
-    .catch(error => console.log(error))
-   }*/
+    .catch(error => console.log(error))*/
+   }
 }

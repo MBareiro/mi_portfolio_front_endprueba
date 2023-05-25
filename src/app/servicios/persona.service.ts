@@ -8,27 +8,23 @@ import { Persona } from '../models/persona';
   providedIn: 'root',
 })
 export class PersonaService {
-  //URL = 'http://localhost:8080/personas/';
-  //URL = 'https://mbdevfrontend.web.app/personas';
+  
   URL = environment.URL + 'personas/';
 
-  constructor(private httpClient: HttpClient) {} public findPersona(): Observable<Persona>{
-    return this.httpClient.get<Persona>(this.URL+ 'traer/perfil');
-  }
-
-  
-  
+  constructor(private httpClient: HttpClient) {}
+    
+   
   //Observable hace peticiones asincronas, maneja las peticiones y respuestas
-  public getPersona(): Observable<Persona> {
+   /*public getPersona(): Observable<Persona> {
     return this.httpClient.get<Persona>(this.URL+'traer/perfil');
-  }
+  }*/
 
   public lista(): Observable<Persona[]>{
     return this.httpClient.get<Persona[]>(this.URL + 'lista');
   }
 
   public detail(id: number): Observable<Persona>{
-    return this.httpClient.get<Persona>(this.URL + `traer`);
+    return this.httpClient.get<Persona>(this.URL + `detail/${id}`);
   }
 /*
   public save(Persona: Persona): Observable<any>{

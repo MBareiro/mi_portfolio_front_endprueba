@@ -41,10 +41,10 @@ export class EditSobreMiComponent {
       }
     )
   }
-  /*
+  
   uploadImage($event:any){
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "perfil_" + id;
     this.imageService.uploadImage($event, name);
-  }*/
+  }
 }
