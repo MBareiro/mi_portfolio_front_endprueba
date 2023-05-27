@@ -30,6 +30,9 @@ import { EditProjectComponent } from './componentes/proyectos/edit-project.compo
 import { LoginComponent } from './componentes/login/login.component';
 import { interceptorProvider } from './servicios/interceptor-service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideStorage,getStorage} from '@angular/fire/storage';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -64,6 +67,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(
+      environment.firebase
+    )),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

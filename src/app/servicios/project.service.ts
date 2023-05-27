@@ -8,8 +8,7 @@ import { Project } from '../models/project';
   providedIn: 'root',
 })
 export class ProjectService {
- // URL = 'http://localhost:8080/project/';
- // URL = 'https://mbdevfrontend.web.app/project';
+  
  URL = environment.URL + 'project/';
 
   constructor(private httpClient: HttpClient) {}

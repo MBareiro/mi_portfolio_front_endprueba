@@ -8,9 +8,9 @@ import { Skill } from '../models/skill';
   providedIn: 'root'
 })
 export class SkillService {
-  //URL = 'http://localhost:8080/skill/';
-  //URL = 'https://mbdevfrontend.web.app/skill';
+
   URL = environment.URL + 'skill/';
+  
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Skill[]>{

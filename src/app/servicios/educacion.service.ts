@@ -8,9 +8,8 @@ import { Educacion } from '../models/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
+  
   URL = environment.URL + 'educacion/';
-  //URL = 'http://localhost:8080/educacion/';
-  //URL = 'https://mbdevfrontend.web.app/educacion';
   
   constructor(private httpClient : HttpClient) { }
 

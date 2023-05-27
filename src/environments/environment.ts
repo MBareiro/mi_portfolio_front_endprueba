@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  URL: 'https://backendmbdev.onrender.com',
+  URL: 'https://backendmbdev.onrender.com/',
 
   firebase: {
     apiKey:
